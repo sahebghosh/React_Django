@@ -1,7 +1,10 @@
-from django.urls import path
+from django.urls import path, include
+from . import views
+from rest_framework import routers
 
-from .views import MenuListView
+router = routers.DefaultRouter()
+router.register('menu', views.MenuView)
 
 urlpatterns = [
-    path('', MenuListView.as_view()),
+    path('', include(router.urls))
 ]

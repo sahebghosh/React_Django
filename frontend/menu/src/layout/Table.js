@@ -8,7 +8,7 @@ export class Table extends Component {
     }
 
     componentDidMount(){
-      axios.get('http://127.0.0.1:8000/api/')
+      axios.get('http://127.0.0.1:8000/api/menu/')
                 .then(res =>{
                   this.setState({
                     menu: res.data
@@ -35,8 +35,7 @@ export class Table extends Component {
         data={ this.state.menu} 
         filterable
         defaultPageSize={10}
-        style={{background:'white'
-      }}
+        style={{background:'white'}}
          >
 
       </ReactTable>

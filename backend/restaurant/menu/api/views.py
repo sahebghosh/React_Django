@@ -1,9 +1,9 @@
-from rest_framework.generics import ListAPIView
+from rest_framework import viewsets 
 from menu.models import Menu
 from .serializers import MenuSerializer
 
 
-class MenuListView(ListAPIView):
+class MenuView(viewsets.ModelViewSet):
     queryset = Menu.objects.all()
     serializer_class = MenuSerializer
 
